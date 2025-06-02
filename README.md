@@ -1,4 +1,4 @@
-# SF_RxJavaWork
+# RxJava
 
 **Кастомная реализация** основных концепций реактивного программирования на Java (аналог RxJava).
 
@@ -29,76 +29,6 @@
     * `RxDisposable` — отмена одной подписки
     * `RxCompositeDisposable` — групповая отмена
 * **Логирование** через SLF4J + Log4j
-
-## Технологии
-
-* Java 17+
-* Maven
-* SLF4J API + Log4j
-* JUnit 5
-
-## Установка и запуск
-
-1. Клонировать репозиторий:
-
-   ```bash
-   git clone https://github.com/ВАШ_ПРОЕКТ/rxjavawork.git
-   cd rxjavawork
-   ```
-2. Собрать и запустить тесты:
-
-   ```bash
-   mvn clean test
-   ```
-3. Запустить демонстрацию:
-
-   ```bash
-   mvn exec:java -Dexec.mainClass="com.rxjavawork.Main"
-   ```
-
-## Структура проекта
-
-```plaintext
-rxjavawork/
-├── pom.xml
-├── README.md
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── rxjavawork/
-│   │   │           ├── core/
-│   │   │           │   ├── RxObservable.java
-│   │   │           │   ├── RxObserver.java
-│   │   │           │   ├── RxOnSubscribe.java
-│   │   │           │   ├── RxDisposable.java
-│   │   │           │   └── RxCompositeDisposable.java
-│   │   │           ├── operators/
-│   │   │           │   ├── MapOperator.java
-│   │   │           │   ├── FilterOperator.java
-│   │   │           │   ├── FlatMapOperator.java
-│   │   │           │   ├── MergeOperator.java
-│   │   │           │   ├── ConcatOperator.java
-│   │   │           │   └── ReduceOperator.java
-│   │   │           ├── schedulers/
-│   │   │           │   ├── RxScheduler.java
-│   │   │           │   ├── RxIOScheduler.java
-│   │   │           │   ├── RxComputationScheduler.java
-│   │   │           │   └── RxSingleScheduler.java
-│   │   │           └── Main.java
-│   │   └── resources/
-│   │       └── log4j.properties
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── rxjavawork/
-│                   ├── core/
-│                   │   └── RxObservableTest.java
-│                   ├── operators/
-│                   │   └── OperatorTest.java
-│                   └── schedulers/
-│                       └── SchedulerTest.java
-```
 
 ## Архитектура системы
 
@@ -152,12 +82,6 @@ rxjavawork/
 
     * `RxDisposable.dispose()`, `RxCompositeDisposable.dispose()`.
 
-Запуск:
-
-```bash
-mvn test
-```
-
 ## Примеры использования
 
 ```bash
@@ -180,13 +104,3 @@ FlatMapOperator.apply(
     s -> RxObservable.just(s + "1", s + "2")
 ).subscribe(System.out::println);
 ```
-
-## Автор
-
-Березняк Владимир
-
-Проект реализован в рамках учебного задания МИФИ
-
-GitHub: github.com/amasovich
-
-Telegram: @amasovich
